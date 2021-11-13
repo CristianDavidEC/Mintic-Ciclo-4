@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend de la sastreria proyecto mintic 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristianDavidEC/Sastreria-Mintic-Ciclo-4.git"
+  },
+  "author": "Katherine Baquero, Karol juliana Murillo tellez, Cristian David Escobar Castillo, Edwin Sneider Escobar Ortiz, Jhonatan Camilo Ortiz Lozano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristianDavidEC/Sastreria-Mintic-Ciclo-4/issues"
+  },
+  "homepage": "https://github.com/CristianDavidEC/Sastreria-Mintic-Ciclo-4#readme",
+  "dependencies": {
+    "firebase": "^9.4.1",
+    "firebase-admin": "^10.0.0"
+  }
+}
