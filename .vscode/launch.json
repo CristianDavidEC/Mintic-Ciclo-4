@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-msedge",
+            "name": "http://localhost:3000/facturas",
+            "request": "launch",
+            "url": "http://localhost:3000/facturas"
+        }
+    ]
+}
