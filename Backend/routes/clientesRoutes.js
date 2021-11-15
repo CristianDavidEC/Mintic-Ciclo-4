@@ -4,6 +4,8 @@ const db = require('../src/db/crudClientes.js');
 
 const router = express.Router();
 
+//TODO:agregar metodo de traer todos los clientes
+
 router.get('/:id', function (req, res) {
     const id = req.params.id;
     db.getCliente(id, function (cliente) {
@@ -26,11 +28,11 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+/*router.delete('/:id', (req, res) => {
     const id = req.params.id;
     db.deleteCliente(id, function (response) {
         res.send(response);
     })
-})
+})*/
 
 module.exports = router;

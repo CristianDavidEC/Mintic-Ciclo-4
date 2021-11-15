@@ -5,6 +5,12 @@ const db = require('../src/db/crudFacturas.js');
 
 const router = express.Router();
 
+//TODO: filtrar facturas por cliente
+
+//TODO: filtro por estado de factura
+
+//TODO: filtro por fecha de factura
+
 //Trae todas las facturas
 router.get('/', (req, res) => {
     db.getFacturas( function(facturas) {
@@ -55,3 +61,4 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+

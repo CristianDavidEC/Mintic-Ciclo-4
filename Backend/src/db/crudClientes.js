@@ -1,5 +1,7 @@
 const db = require('./firebase.js');
 
+//TODO:agregar metodo de traer todos los clientes
+
 function getCliente(id, callback) {
     return db.collection('Cliente').doc(id).get()
         .then((doc) => {
@@ -31,7 +33,7 @@ function updateClienteTotally(id, cliente, callback) {
 }
 
 
-function deleteCliente(id, callback) {
+/*function deleteCliente(id, callback) {
     return db.collection('Cliente').doc(id).delete()
         .then(() => {
             callback("Cliente Eliminado");
@@ -39,11 +41,11 @@ function deleteCliente(id, callback) {
         .catch((err) => {
             callback(`Error al Eliminar cliente ${err}`);
         })
-}
+}*/
 
 module.exports = {
     getCliente,
     addCliente,
     updateClienteTotally,
-    deleteCliente
+    //deleteCliente
 }

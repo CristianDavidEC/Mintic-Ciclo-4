@@ -1,5 +1,7 @@
 const db = require('./firebase.js');
 
+//TODO: filtrar por id de cliente en una factura
+
 //Obtiene todas las facturas
 function getFacturas(callback) {
     return db.collection('Facturas').get()
