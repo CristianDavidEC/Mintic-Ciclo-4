@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <h1><i className="bi bi-123"></i> Hello CodeSandbox</h1>
     </div>
   );
 }
