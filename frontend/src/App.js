@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar.js';
 
@@ -11,13 +11,17 @@ import NotFound from './screens/NotFound.js';
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/facturas" element={<Facturas/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
+      <div class="container-fluid">
+        <div class="row flex-nowrap">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/facturas" element={<Facturas />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
