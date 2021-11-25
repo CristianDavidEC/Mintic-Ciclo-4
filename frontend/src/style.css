@@ -1,23 +1,24 @@
-.letra {
-    color: blue;
-}
 
-.color-primario{
+.color-p{
     background-color: #68417f;
 }
 
-.color-secundario{
+.color-s{
     background-color: #219bc3;
 }
 
-.color-terciario{
+.color-t{
     background-color:#c66aab;
 }
 
-.color-letra{
+.color-l{
     color: #f2cfda;
 }
 
-.color-letra:hover{
+.color-l:hover{
     color: #f8f6f7;
+}
+
+.color-lc{
+    color: #331846;
 }
