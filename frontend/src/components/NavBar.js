@@ -10,7 +10,7 @@ const NavBar = () => {
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
-                            <a href="#" class="nav-link align-middle px-0 color-l">
+                            <a href="/" class="nav-link align-middle px-0 color-l">
                                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline"> <b>Clientes </b></span>
                             </a>
                         </li>
@@ -19,11 +19,11 @@ const NavBar = () => {
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline"> <b>Facturas</b></span></a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-0 align-middle color-l">
+                            <a href="/" class="nav-link px-0 align-middle color-l">
                             <i class="fs-4 bi-person-circle"></i><span class="ms-1 d-none d-sm-inline"> <b>Perfil</b></span> </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-0 align-middle color-l">
+                            <a href="/" class="nav-link px-0 align-middle color-l">
                             <i class="fs-4 bi-x-circle"></i><span class="ms-1 d-none d-sm-inline"> <b>Salir</b></span> </a>
                         </li>
                     </ul>
