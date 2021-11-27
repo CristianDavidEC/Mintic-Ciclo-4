@@ -8,7 +8,7 @@ import carrusel3 from '../assets/img/carrusel3.jpg'
 const CarruselHome = () => {
     return (
         <>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src={carrusel1} class="d-block w-100" alt="..."/>
