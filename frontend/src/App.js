@@ -11,8 +11,8 @@ import NotFound from './screens/NotFound.js';
 function App() {
   return (
     <BrowserRouter>
-      <div class="container-fluid">
-        <div class="row flex-nowrap">
+      <div className="container-fluid">
+        <div className="row flex-nowrap">
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
