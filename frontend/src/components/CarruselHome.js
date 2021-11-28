@@ -16,6 +16,7 @@ const CarruselHome = () => {
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
+
                     </div>
                     <div className="carousel-item">
                         <img src={carrusel2} className="d-block w-100" alt="..." />
