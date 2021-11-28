@@ -19,7 +19,7 @@ const NavBar = () => {
                                 <i className="fs-4 bi-table"></i> <span className="ms-1 d-none d-sm-inline"> <b>Facturas</b></span></a>
                         </li>
                         <li>
-                            <a href="/" className="nav-link px-0 align-middle color-l">
+                            <a href="/login" className="nav-link px-0 align-middle color-l">
                             <i className="fs-4 bi-person-circle"></i><span className="ms-1 d-none d-sm-inline"> <b>Perfil</b></span> </a>
                         </li>
                         <li>
