@@ -2,8 +2,14 @@ import React from 'react'
 import Tabla from '../components/Tabla/Tabla'
 import Input from '../components/Inputs/Input'
 import NavFacturas from '../components/NavFacturas'
+import {Navigate} from 'react-router-dom';
 
 const Facturas = () => {
+    var user_admin = JSON.parse(localStorage.getItem("user_admin"));
+    if (user_admin == undefined) {
+      return <Navigate to="/" />;
+    }
+  
     return (
         <>
             <div class="container m-3 tabla" /*style={{width: 1060}}*/>
