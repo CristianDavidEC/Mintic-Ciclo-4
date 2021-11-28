@@ -5,9 +5,12 @@ import CarruselHome from '../components/CarruselHome';
 const Login = () => {
     return (
         <>
-            <h1>Login</h1>
+            <div className="Container tabla">
+            <h1>Inicia Sesión</h1>
+            
             <BotonInicioSeccion />
-            {/*<CarruselHome />*/ }
+            {/*<CarruselHome />*/}
+            </div>
         </>
     )
 }
