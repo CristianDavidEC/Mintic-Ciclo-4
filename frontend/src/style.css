@@ -22,3 +22,11 @@
 .color-lc{
     color: #331846;
 }
+
+body {
+    max-width: 100%;
+}
+
+.tabla {
+    width: 80%;
+}
