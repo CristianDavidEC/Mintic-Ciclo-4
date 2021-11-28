@@ -1,9 +1,10 @@
 import React from 'react'
+import CarruselHome from '../components/CarruselHome';
 
 const Login = () => {
     return (
         <>
-            <h1>Login</h1>
+            <CarruselHome />
         </>
     )
 }

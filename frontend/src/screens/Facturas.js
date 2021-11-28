@@ -2,12 +2,14 @@ import React from 'react'
 import Tabla from '../components/Tabla/Tabla'
 import Input from '../components/Inputs/Input'
 
+import NavFacturas from '../components/NavFacturas'
+
 
 const Facturas = () => {
     return (
         <>
             <div class="container m-2" style={{width: 1100}}>
-                <h3 class="color-lc">Facturas</h3>
+                <NavFacturas />
                 <div class="row">
                     <div class="col-md-9">
                     </div>
