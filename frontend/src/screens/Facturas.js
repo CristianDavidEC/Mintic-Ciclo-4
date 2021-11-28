@@ -8,7 +8,7 @@ import NavFacturas from '../components/NavFacturas'
 const Facturas = () => {
     return (
         <>
-            <div class="container m-2" style={{width: 1100}}>
+            <div class="container m-3 tabla" /*style={{width: 1060}}*/>
                 <NavFacturas />
                 <div class="row">
                     <div class="col-md-9">
