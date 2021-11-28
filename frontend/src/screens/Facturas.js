@@ -1,9 +1,7 @@
 import React from 'react'
 import Tabla from '../components/Tabla/Tabla'
 import Input from '../components/Inputs/Input'
-
 import NavFacturas from '../components/NavFacturas'
-
 
 const Facturas = () => {
     return (
@@ -24,5 +22,4 @@ const Facturas = () => {
         </>
     )
 }
-
 export default Facturas
