@@ -29,7 +29,7 @@ const Abonos = () => {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Abono" className="modal fade">
+            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Abono"  boton="Agregar" className="modal fade">
                 <label>Abono:</label>
                 <Input placeholder="Abono" />
             </Modal>

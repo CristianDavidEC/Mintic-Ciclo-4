@@ -29,7 +29,7 @@ const Prendas = () => {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Prenda" className="modal fade">
+            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Prenda"  boton="Agregar" className="modal fade">
                 <label>Color:</label>
                 <Input placeholder="Color" />
                 <label>Marca:</label>
