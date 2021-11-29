@@ -1,6 +1,10 @@
 import React from 'react'
 
 const NavBar = () => {
+    const CloseSession = () => {
+        localStorage.removeItem('user_admin')
+      }
+    
     return (
         <>
             <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 color-p">
@@ -23,7 +27,7 @@ const NavBar = () => {
                             <i className="fs-4 bi-person-circle"></i><span className="ms-1 d-none d-sm-inline"> <b>Perfil</b></span> </a>
                         </li>
                         <li>
-                            <a href="/" className="nav-link px-0 align-middle color-l">
+                            <a href="/" className="nav-link px-0 align-middle color-l" onClick={CloseSession}>
                             <i className="fs-4 bi-x-circle"></i><span className="ms-1 d-none d-sm-inline"> <b>Salir</b></span> </a>
                         </li>
                     </ul>

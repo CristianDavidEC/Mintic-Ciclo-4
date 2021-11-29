@@ -27,6 +27,21 @@ const uiConfig = {
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
 
+    callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+          const user_admin = {
+            uid: authResult.user.uid,
+            name: authResult.user.displayName,
+            email: authResult.user.email,
+            flagNewUser: authResult.additionalUserInfo.isNewUser,
+          };
+    
+          localStorage.setItem("user_admin", JSON.stringify(user_admin));
+          return true;
+        },
+      },
+    
+
 };
 
 function BotonInicioSeccion() {
