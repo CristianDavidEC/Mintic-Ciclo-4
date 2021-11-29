@@ -2,30 +2,31 @@ import React from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import Input from '../Inputs/Input'
+import NavFacturas from '../NavFacturas'
 
 const DetalleFactura = () => {
     return (
         <>
-            <div class="container m-2" style={{width: 1050}}>
-                <h3 class="color-lc">Facturas</h3>
-                <div class="row">
-                    <div class="col-md-4 border">
+            <div className="container m-3 tabla">
+                <h3 className="color-lc">Facturas</h3>
+                <div className="row">
+                    <div className="col-md-4 border">
                         <label>Nombre</label>
-                        <Input placeholder="Nombre"></Input>
+                        <Input placeholder="Nombre"/>
                         <label>Teléfono</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                         <label>Id</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                         <label>Correo</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                         <label>Fecha Ingreso</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                         <label>Estado Factura</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                         <label>Total a Pagar</label>
-                        <Input placeholder="Teléfono"></Input>
+                        <Input placeholder="Teléfono"/>
                     </div>
-                    <div class="col-md-8">
+                    <div className="col-md-8">
                         <Prendas/>
                         <Abonos/>
                     </div>

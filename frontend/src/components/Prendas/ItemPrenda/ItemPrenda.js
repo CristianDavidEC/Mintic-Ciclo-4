@@ -1,14 +1,16 @@
 import React from 'react'
 
-const ItemPrenda = ({tipo, talla, colorP}) => {
+const ItemPrenda = ({ color, marca, tipo, tipoArreglo, costo }) => {
     return (
         <>
-            <div class="container m-2 border">
-                <b>Tipo: {tipo}</b><br/>
-                <b>Talla: {talla}</b><br/>
-                <b>Color: {colorP}</b><br/>
-                <span><i class="m-2 fa fa-edit"></i></span>
-                <span><i class="m-2 fa fa-trash"></i></span>
+            <div className="container m-2 border">
+                <b>Color: {color}</b><br />
+                <b>Marca: {marca}</b><br />
+                <b>Tipo: {tipo}</b><br />
+                <b>Tipo Arreglo: {tipoArreglo}</b><br />
+                <b>Costo: {costo}</b><br />
+                <span><i className="m-2 fa fa-edit display-6"></i></span>
+                <span><i className="m-2 fa fa-trash display-6"></i></span>
             </div>
         </>
     )

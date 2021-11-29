@@ -5,7 +5,7 @@ const Tabla = () => {
     return (
         <>
             <table className="table table-striped">
-                <thead class="color-t color-lc">
+                <thead className="color-t color-lc">
                     <tr>
                         <th>Id Factura</th>
                         <th>Cliente</th>

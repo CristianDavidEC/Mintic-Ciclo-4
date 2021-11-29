@@ -6,16 +6,16 @@ import NavFacturas from '../components/NavFacturas'
 const Facturas = () => {
     return (
         <>
-            <div class="container m-3 tabla" /*style={{width: 1060}}*/>
+            <div className="container m-3 tabla">
                 <NavFacturas />
-                <div class="row">
-                    <div class="col-md-9">
+                <div className="row">
+                    <div className="col-md-9">
                     </div>
-                    <div class="col-md-3">
+                    <div className="col-md-3">
                         <Input placeholder="Buscar"/>
                     </div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <Tabla />
                 </div>
             </div>
