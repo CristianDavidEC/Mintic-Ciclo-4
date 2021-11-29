@@ -7,7 +7,13 @@ const router = express.Router();
 
 //TODO: filtrar facturas por cliente
 
-//TODO: filtro por estado de factura
+//Filtro por estado de factura
+router.get('/search/:estadoFactura',(req, res)=>{
+    const estadoFactura = req.params.estadoFactura;
+    db.searchFacturasEstadoFact(estadoFactura, function(facturas){
+        res.send(facturas);
+    })
+})
 
 //TODO: filtro por fecha de factura
 

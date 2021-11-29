@@ -2,6 +2,21 @@ const db = require('./firebase.js');
 
 //TODO: filtrar por id de cliente en una factura
 
+// Funcion para buscar facturas por estado factura
+function searchFacturasEstadoFact(estadoFactura, callback) {
+    return db.collection('Facturas').where("estado_factura", "==", estadoFactura).get()
+        .then((refDoc) => {
+            var facturas = [];
+            refDoc.forEach(doc => {                
+                facturas.push(doc.data());
+            })
+            callback(facturas);
+        })
+        .catch((err) => {
+            callback("Error al buscar facturaas con estado factura"+estadoFactura, err)
+        })
+}
+
 //Obtiene todas las facturas
 function getFacturas(callback) {
     return db.collection('Facturas').get()
@@ -83,5 +98,6 @@ module.exports = {
     addFactura,
     actualizarFactura,
     modificarFactura,
-    eliminarFactura
+    eliminarFactura,
+    searchFacturasEstadoFact
 }

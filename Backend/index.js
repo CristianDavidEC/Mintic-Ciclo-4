@@ -1,11 +1,12 @@
 const express = require('express');
 const APIRoutes = require('./routes/indexRoutes.js');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const port = 5000;
 
 //app.use(express.static('public'));
 app.use(express.json());
-
+app.use(cors());
 //Recibe la app expres en la cual va a utilizar las rutas
 APIRoutes(app);
 
