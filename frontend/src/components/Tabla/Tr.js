@@ -8,7 +8,7 @@ const Tr = ({id, cliente, estado, fecha}) => {
                 <td>{cliente}</td>
                 <td>{estado}</td>
                 <td>{fecha}</td>
-                <td><a href="/detalleFactura" class="enlaces"><button class="btn color-s color-l"><i class="fa fa-eye"></i></button></a></td>
+                <td><a href="/detalleFactura" className="enlaces"><button className="btn color-s color-l"><i className="fa fa-eye"></i></button></a></td>
             </tr>
         </>
     )
