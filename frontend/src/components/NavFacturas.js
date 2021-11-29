@@ -3,11 +3,11 @@ import React from 'react'
 const NavFacturas = () => {
     return (
         <>
-            <nav class="navbar-expand-lg navbar-light bg-light">
-                <div class="d-flex justify-content-between">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
+            <nav className="navbar-expand-lg color-p p-2 my-3">
+                <div className="d-flex justify-content-between">
+                    <a className="nav-link color-l" href="/registrarFactura"><b><i className="bi bi-file-earmark-plus"></i> Registrar Factura</b></a>
+                    <a className="nav-link color-l" href="todasFacturas"><b><i className="bi bi-file-earmark-text"></i> Ver Todas Las Facturas</b></a>
+                    <a className="nav-link color-l"><b><i className="bi bi-file-check"></i> Facturas Pendientes</b></a>
                 </div>
             </nav>
 

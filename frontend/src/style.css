@@ -18,6 +18,9 @@
 .color-l:hover{
     color: #f8f6f7;
 }
+.color-s:hover{
+    background-color: #2493b8;
+}
 
 .color-lc{
     color: #331846;
@@ -27,6 +30,6 @@ body {
     max-width: 100%;
 }
 
-.tabla {
+.ancho {
     width: 80%;
 }

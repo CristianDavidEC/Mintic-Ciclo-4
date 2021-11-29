@@ -6,8 +6,7 @@ import Input from '../Inputs/Input'
 const DetalleFactura = () => {
     return (
         <>
-            <div class="container m-2" style={{width: 1050}}>
-                <h3 class="color-lc">Facturas</h3>
+            <div class="container m-2 ancho">
                 <div class="row">
                     <div class="col-md-4 border">
                         <label>Nombre</label>
