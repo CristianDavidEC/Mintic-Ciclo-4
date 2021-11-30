@@ -17,10 +17,7 @@ const Abonos = () => {
                 <h4>Abonos:</h4>
                 <div className="row">
                     <div className="col-md-5">
-                        <ItemAbonos abono="10.000" fecha="25/11/2021"/>
-                    </div>
-                    <div className="col-md-5">
-                        <ItemAbonos abono="5.000" fecha="26/11/2021"/>
+                        <ItemAbonos abono="10.000" fecha="25/11/2021" />
                     </div>
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
@@ -29,7 +26,7 @@ const Abonos = () => {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Abono" className="modal fade">
+            <Modal isOpen={isOpen} closeModal={closeModal} title="Agregar Abono" boton="Agregar" className="modal fade">
                 <label>Abono:</label>
                 <Input placeholder="Abono" />
             </Modal>

@@ -9,7 +9,7 @@ import {getFacturas,searchFacturasEstadoFact} from "../apis/FacturasCRUD";
 const Facturas = () => {
     var user_admin = JSON.parse(localStorage.getItem("user_admin"));
     if (user_admin == undefined) {
-      return <Navigate to="/" />;
+        return <Navigate to="/" />;
     }
     
     getFacturas(res =>{
@@ -20,17 +20,17 @@ const Facturas = () => {
     });
     return (
         <>
-            <div class="container ancho" /*style={{width: 1060}}*/>
+            <div className="container ancho">
                 <NavFacturas/>
-                <div  className= "m-3">
-                    <div class="row">
-                        <div class="col-md-9">
+                <div>
+                    <div className="row">
+                        <div className="col-md-9">
                         </div>
-                        <div class="col-md-3">
+                        <div className="col-md-3">
                             <Input placeholder="Buscar" />
                         </div>
                     </div>
-                    <div class="row">
+                    <div className="row">
                         <Tabla />
                     </div>
                 </div>

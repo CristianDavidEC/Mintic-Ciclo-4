@@ -12,7 +12,7 @@ const CarruselHome = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={carrusel1} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
@@ -20,14 +20,14 @@ const CarruselHome = () => {
                     </div>
                     <div className="carousel-item">
                         <img src={carrusel2} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={carrusel3} className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some  representative placeholder content for the second slide.</p>
                         </div>

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Modal = ({ title, children, isOpen, closeModal }) => {
+const Modal = ({ title, children, isOpen, closeModal, boton }) => {
     const handleClick = (e) => e.stopPropagation();
     return (<>
         <div className={`modales fades ${isOpen && "is-open"}`} onClick={closeModal}>
@@ -15,7 +15,7 @@ const Modal = ({ title, children, isOpen, closeModal }) => {
                     {children}
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn color-p color-l">Agregar</button>
+                    <button type="button" className="btn color-p color-l">{boton}</button>
                 </div>
             </div>
         </div>

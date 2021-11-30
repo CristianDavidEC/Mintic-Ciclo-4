@@ -3,7 +3,7 @@ import React from 'react'
 const NavBar = () => {
     const CloseSession = () => {
         localStorage.removeItem('user_admin')
-      }
+    }
     
     return (
         <>
