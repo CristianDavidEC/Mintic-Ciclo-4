@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Modal from '../../Modal/Modal'
 import Input from '../../Inputs/Input'
 

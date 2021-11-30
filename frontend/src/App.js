@@ -19,9 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/facturas" element={<Facturas />} />
-            <Route path="/detalleFactura" element={<DetalleFactura />} />
-            <Route path="/registrarFactura" element={<DetalleFactura />} />
-            <Route path="/todasFacturas" element={<Tabla/>} />
+            <Route path="/detalleFactura" element={<DetalleFactura titulo="Detalle Factura" />} />
+            <Route path="/registrarFactura" element={<DetalleFactura titulo="Registrar Factura" />} />
+            <Route path="/todasFacturas" element={<Tabla />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
