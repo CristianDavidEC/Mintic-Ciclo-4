@@ -8,7 +8,7 @@ import {getFacturas,searchFacturasEstadoFact} from "../apis/FacturasCRUD";
 
 const Facturas = () => {
     var user_admin = JSON.parse(localStorage.getItem("user_admin"));
-    if (user_admin === undefined) {
+    if (user_admin == undefined) {
         return <Navigate to="/" />;
     }
     
