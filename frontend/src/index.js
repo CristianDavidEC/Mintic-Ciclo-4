@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-//Import Boostrap ---------------------------------------
-//import * as bootstrap from 'bootstrap';
+//Import Boostrap --------------------------------------- NO borrar estas lineas Please
+import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fortawesome/fontawesome-free/css/all.css';
