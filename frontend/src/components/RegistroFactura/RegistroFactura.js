@@ -6,8 +6,12 @@ import { Form } from 'react-bootstrap'
 import { addFactura } from '../../apis/FacturasCRUD'
 
 const RegistroFactura = ({ titulo }) => {
+    var num = (Math.floor(Math.random() * 100001));
+
+    var prendas = [];
     function save(even) {
         even.preventDefault();
+        console.log(prendas);
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -16,12 +20,15 @@ const RegistroFactura = ({ titulo }) => {
             fechaIngreso: even.target[4].value,
             estadoFactura: even.target[5].value,
             totalPagar: even.target[6].value,
-            id: 1,
+            prendas: prendas,
+            id: num,
         }
         addFactura(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
+                console.log(prendas);
                 alert("Factura registrada con exito");
+                alert(prendas[0].id);
                 window.location.href = "http://localhost:3000/facturas";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
@@ -59,9 +66,14 @@ const RegistroFactura = ({ titulo }) => {
                                     <Form.Label>Fecha Ingreso</Form.Label>
                                     <Form.Control type="text" placeholder="Fecha Ingreso" value={fechaIngreso} readOnly />
                                 </Form.Group>
-                                <Form.Group controlId="estadoFactura">
+                                <Form.Group className="" controlId="estadoFactura">
                                     <Form.Label>Estado Factura</Form.Label>
-                                    <Form.Control type="text" placeholder="Estado Factura" />
+                                    <Form.Select>
+                                        <option>Seleccione</option>
+                                        <option value="Pendiente">Pendiente</option>
+                                        <option value="En espera">En espera</option>
+                                        <option value="Cancelado">Cancelado</option>
+                                    </Form.Select>
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
@@ -71,7 +83,7 @@ const RegistroFactura = ({ titulo }) => {
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas />
+                            <Prendas listaPrendas={prendas}/>
                             <Abonos />
                         </div>
                     </div>

@@ -4,8 +4,6 @@ import Input from '../components/Inputs/Input'
 import NavFacturas from '../components/NavFacturas'
 import { Navigate } from 'react-router-dom';
 
-
-
 const Facturas = () => {
     var user_admin = JSON.parse(localStorage.getItem("user_admin"));
     if (user_admin == undefined) {
