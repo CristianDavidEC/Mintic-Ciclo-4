@@ -7,23 +7,23 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
-
     //const [state, setstate] = useState(listaPrendas)
-
     var prendas = [];
 
     function save(even) {
         even.preventDefault();
-        console.log(prendas);
         
+        const fecha = new Date();
+        const fecIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
+    
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
             telefono: even.target[2].value,
             correo: even.target[3].value,
-            fechaIngreso: even.target[4].value,
-            estadoFactura: even.target[5].value,
-            totalPagar: even.target[6].value,
+            fechaIngreso: fecIngreso.toString(),
+            estadoFactura: even.target[4].value,
+            totalPagar: even.target[5].value,
             prendas: prendas,
             id: num,
         }
@@ -38,8 +38,6 @@ const RegistroFactura = ({ titulo }) => {
             }
         })
     }
-    const fecha = new Date();
-    const fechaIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
     return (
         <>
             <div className="container ancho">
@@ -64,10 +62,6 @@ const RegistroFactura = ({ titulo }) => {
                                 <Form.Group controlId="correo">
                                     <Form.Label>Correo</Form.Label>
                                     <Form.Control type="text" placeholder="Correo" />
-                                </Form.Group>
-                                <Form.Group controlId="fechaIngreso">
-                                    <Form.Label>Fecha Ingreso</Form.Label>
-                                    <Form.Control type="text" placeholder="Fecha Ingreso" value={fechaIngreso} readOnly />
                                 </Form.Group>
                                 <Form.Group className="" controlId="estadoFactura">
                                     <Form.Label>Estado Factura</Form.Label>

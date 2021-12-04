@@ -6,7 +6,6 @@ import Input from '../Inputs/Input'
 import RegistroFactura from '../RegistroFactura/RegistroFactura';
 
 const Prendas = (props) => {
-
     var { listaPrendas } = props;
 
     const useModal = (initialValue = false) => {
@@ -27,15 +26,12 @@ const Prendas = (props) => {
             costo: even.target[4].value,
         }
         listaPrendas.push(obj);
+        setListaPrendas(listaPrendas);
         document.querySelector('#formPrenda').reset();
     }
 
     const [prendas, setListaPrendas] = useState([listaPrendas]);
-    useEffect(() => {
-        setListaPrendas(listaPrendas);
-    }, [listaPrendas]);
-
-
+    
     return (
         <>
             <div className="container mb-5">
@@ -43,7 +39,8 @@ const Prendas = (props) => {
                 <div className="row">
                     <div className="col-md-5">
                         {prendas.map((item, index) => (
-                            <ItemPrenda color="Negro" marca="Nike" tipo="Pantalon" tipoArreglo="Costura" costo="15.000" />
+                            console.log(item),
+                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>
                         ))}
                     </div>
                     <div className="col-md-1 mt-4">

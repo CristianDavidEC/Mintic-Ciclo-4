@@ -8,13 +8,9 @@ const Tabla = () => {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        console.log("useEffect");
         getFacturas(setResults);
+        console.log(results);
     }, []);
-
-    /*getFacturas(res =>{
-        console.log(res);
-    });*/
 
     return (
         <>
@@ -30,7 +26,6 @@ const Tabla = () => {
                 </thead>
                 <tbody>
                     {results.map((item, index) => (
-                        console.log(item),
                         <Tr objeto={item} key={index}/>
                     ))}
                 </tbody>
