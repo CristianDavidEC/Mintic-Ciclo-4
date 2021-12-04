@@ -8,6 +8,7 @@ import Facturas from './screens/Facturas.js';
 import Login from './screens/Login.js';
 import NotFound from './screens/NotFound.js';
 import DetalleFactura from './components/DetalleFactura/DetalleFactura'
+import RegistroFactura from './components/RegistroFactura/RegistroFactura'
 import Tabla from './components/Tabla/Tabla'
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/facturas" element={<Facturas />} />
             <Route path="/detalleFactura" element={<DetalleFactura titulo="Detalle Factura" />} />
-            <Route path="/registrarFactura" element={<DetalleFactura titulo="Registrar Factura" />} />
+            <Route path="/registrarFactura" element={<RegistroFactura titulo="Registrar Factura" />} />
             <Route path="/todasFacturas" element={<Tabla />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
