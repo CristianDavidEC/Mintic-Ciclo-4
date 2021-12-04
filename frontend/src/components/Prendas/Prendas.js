@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemPrenda from './ItemPrenda/ItemPrenda'
 import Modal from '../Modal/Modal'
 import Input from '../Inputs/Input'
@@ -26,25 +26,25 @@ const Prendas = (props) => {
             tipoArreglo: even.target[3].value,
             costo: even.target[4].value,
         }
-        console.log(obj);
         listaPrendas.push(obj);
         document.querySelector('#formPrenda').reset();
     }
 
-    const [prendas, setListaPrendas] = useState(listaPrendas);
+    const [prendas, setListaPrendas] = useState([listaPrendas]);
+    useEffect(() => {
+        setListaPrendas(listaPrendas);
+    }, [listaPrendas]);
 
 
-    
     return (
         <>
             <div className="container mb-5">
                 <h4>Prendas:</h4>
                 <div className="row">
                     <div className="col-md-5">
-                        <ItemPrenda color="Negro" marca="Nike" tipo="Pantalon" tipoArreglo="Costura" costo="15.000" />
-                        {
-
-                        }
+                        {prendas.map((item, index) => (
+                            <ItemPrenda color="Negro" marca="Nike" tipo="Pantalon" tipoArreglo="Costura" costo="15.000" />
+                        ))}
                     </div>
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
