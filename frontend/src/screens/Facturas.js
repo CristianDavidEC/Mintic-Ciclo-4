@@ -2,8 +2,8 @@ import React from 'react'
 import Tabla from '../components/Tabla/Tabla'
 import Input from '../components/Inputs/Input'
 import NavFacturas from '../components/NavFacturas'
-import {Navigate} from 'react-router-dom';
-import {getFacturas,searchFacturasEstadoFact} from "../apis/FacturasCRUD";
+import { Navigate } from 'react-router-dom';
+
 
 
 const Facturas = () => {
@@ -11,17 +11,13 @@ const Facturas = () => {
     if (user_admin == undefined) {
         return <Navigate to="/" />;
     }
-    
-    getFacturas(res =>{
+    /*searchFacturasEstadoFact('pagado',res =>{
         console.log(res);
-    });
-    searchFacturasEstadoFact('pagado',res =>{
-        console.log(res);
-    });
+    });*/
     return (
         <>
             <div className="container ancho">
-                <NavFacturas/>
+                <NavFacturas />
                 <div>
                     <div className="row">
                         <div className="col-md-9">
@@ -31,7 +27,7 @@ const Facturas = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <Tabla />
+                        <Tabla/>
                     </div>
                 </div>
             </div>

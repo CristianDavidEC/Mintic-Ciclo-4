@@ -1,13 +1,14 @@
 import React from 'react'
 
-const Tr = ({id, cliente, estado, fecha}) => {
+const Tr = (props) => {
+    const { objeto } = props;
     return (
         <>
             <tr>
-                <td>{id}</td>
-                <td>{cliente}</td>
-                <td>{estado}</td>
-                <td>{fecha}</td>
+                <td>{objeto.id}</td>
+                <td>{objeto.nombre}</td>
+                <td>{objeto.estadoFactura}</td>
+                <td>{objeto.fechaIngreso}</td>
                 <td><a href="/detalleFactura" className="enlaces"><button className="btn color-s color-l"><i className="fa fa-eye"></i></button></a></td>
             </tr>
         </>

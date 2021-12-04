@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import Tr from './Tr'
+import { getFacturas } from "../../apis/FacturasCRUD";
+
 
 const Tabla = () => {
+
+    const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        console.log("useEffect");
+        getFacturas(setResults);
+    }, []);
+
+    /*getFacturas(res =>{
+        console.log(res);
+    });*/
+
     return (
         <>
             <table className="table table-striped">
@@ -15,8 +29,9 @@ const Tabla = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <Tr id="001" cliente="Cristian Escobar" estado="Entregado" fecha="20/11/2021"/>
-                    <Tr id="002" cliente="Jhonatan Ortiz" estado="Pendiente" fecha="25/11/2021"/>
+                    {results.map((item) => (
+                        <Tr objeto={item} />
+                    ))}
                 </tbody>
             </table>
         </>
