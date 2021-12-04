@@ -40,6 +40,16 @@ router.post('/', (req, res) => {
     });
 });
 
+//Crea una Factura Id
+router.post('/:id', (req, res) => {
+    const id = req.params.id;
+    const factura = req.body;
+    factura.id = id;
+    db.addFacturaConID(id, factura, function (mensaje) {
+        res.send(mensaje);
+    });
+});
+
 //Actualiza una Factura sobreescribiendola
 router.put('/:id', (req, res) => {
     const id = req.params.id;

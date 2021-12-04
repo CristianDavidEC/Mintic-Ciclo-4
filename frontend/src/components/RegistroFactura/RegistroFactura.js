@@ -3,12 +3,15 @@ import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
-import { addFactura } from '../../apis/FacturasCRUD'
+import { addFacturaConID } from '../../apis/FacturasCRUD'
 
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
 
+    //const [state, setstate] = useState(listaPrendas)
+
     var prendas = [];
+
     function save(even) {
         even.preventDefault();
         console.log(prendas);
@@ -24,8 +27,7 @@ const RegistroFactura = ({ titulo }) => {
             prendas: prendas,
             id: num,
         }
-        
-        addFactura(obj, (res) => {
+        addFacturaConID(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
                 console.log(prendas);
@@ -84,7 +86,7 @@ const RegistroFactura = ({ titulo }) => {
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas listaPrendas={prendas}/>
+                            <Prendas listaPrendas={prendas} />
                             <Abonos />
                         </div>
                     </div>
