@@ -30,6 +30,10 @@ const Prendas = (props) => {
         listaPrendas.push(obj);
         document.querySelector('#formPrenda').reset();
     }
+
+    const [prendas, setListaPrendas] = useState(listaPrendas);
+
+
     
     return (
         <>
@@ -38,6 +42,9 @@ const Prendas = (props) => {
                 <div className="row">
                     <div className="col-md-5">
                         <ItemPrenda color="Negro" marca="Nike" tipo="Pantalon" tipoArreglo="Costura" costo="15.000" />
+                        {
+
+                        }
                     </div>
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>

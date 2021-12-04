@@ -1,6 +1,6 @@
 import React from "react"
 
-const Modal = ({ title, children, isOpen, closeModal}) => {
+const Modal = ({ title, children, isOpen, closeModal }) => {
     const handleClick = (e) => e.stopPropagation();
     return (<>
         <div className={`modales fades ${isOpen && "is-open"}`} onClick={closeModal}>

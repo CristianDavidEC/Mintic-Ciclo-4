@@ -55,6 +55,17 @@ function addFactura(factura, callback) {
         });
 }
 
+//Crea una factura
+function addFacturaConID(id, factura, callback) {
+    return db.collection('Facturas').doc(id).set(factura)
+        .then(() => {
+            callback('Factura Agregada');
+        })
+        .catch(err => {
+            callback(`Error al crear la factura ${err}`);
+        });
+}
+
 //actualizacion de factura con sobreescritura, el metodo set en firebase sobrescribe la informacion
 function actualizarFactura(id, factura, callback) {
     return db.collection('Facturas').doc(id).set(factura)
@@ -99,5 +110,6 @@ module.exports = {
     actualizarFactura,
     modificarFactura,
     eliminarFactura,
-    searchFacturasEstadoFact
+    searchFacturasEstadoFact,
+    addFacturaConID
 }
