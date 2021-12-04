@@ -12,6 +12,7 @@ const RegistroFactura = ({ titulo }) => {
     function save(even) {
         even.preventDefault();
         console.log(prendas);
+        
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -23,12 +24,12 @@ const RegistroFactura = ({ titulo }) => {
             prendas: prendas,
             id: num,
         }
+        
         addFactura(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
                 console.log(prendas);
                 alert("Factura registrada con exito");
-                alert(prendas[0].id);
                 window.location.href = "http://localhost:3000/facturas";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
@@ -79,7 +80,7 @@ const RegistroFactura = ({ titulo }) => {
                                     <Form.Label>Total a Pagar</Form.Label>
                                     <Form.Control type="text" placeholder="Total a Pagar" />
                                 </Form.Group>
-                                <button type="submit" class="btn color-p color-l">Guardar</button>
+                                <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
                         <div className="col-md-8">
