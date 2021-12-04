@@ -10,6 +10,7 @@ const Tabla = () => {
     useEffect(() => {
         console.log("useEffect");
         getFacturas(setResults);
+        console.log(results);
     }, []);
 
     /*getFacturas(res =>{
@@ -30,6 +31,7 @@ const Tabla = () => {
                 </thead>
                 <tbody>
                     {results.map((item) => (
+                        console.log(item),
                         <Tr objeto={item} />
                     ))}
                 </tbody>

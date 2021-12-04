@@ -58,7 +58,7 @@ const Prendas = (props) => {
                     <Input placeholder="Tipo Arreglo" name="tipoArreglo" />
                     <label>Costo:</label>
                     <Input placeholder="Costo" name="costo" />
-                    <button type="submit" className="btn color-p color-l" onClick={closeModal}>Agregar</button>
+                    <button type="submit" className="btn color-p color-l mt-3" onClick={closeModal}>Agregar</button>
                 </form>
             </Modal>
         </>
