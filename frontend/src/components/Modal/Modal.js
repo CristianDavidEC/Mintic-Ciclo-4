@@ -13,10 +13,7 @@ const Modal = ({ title, children, isOpen, closeModal, boton }) => {
                 </div>
                 <div className="modal-body">
                     {children}
-                </div>
-                <div className="modal-footer">
-                    <button type="button" className="btn color-p color-l">{boton}</button>
-                </div>
+            </div>
             </div>
         </div>
     </>
