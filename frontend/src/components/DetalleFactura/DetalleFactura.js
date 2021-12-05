@@ -14,7 +14,7 @@ const DetalleFactura = ({ titulo }) => {
         costo: 0,
     }
     const abonos = {
-        valor: even.target[0].value,
+        //valor: even.target[0].value,
         fecha: '2021-01-01 00:00:00'
     }
 

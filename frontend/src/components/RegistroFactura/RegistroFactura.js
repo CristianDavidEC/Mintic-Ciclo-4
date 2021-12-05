@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Prendas from '../Prendas/Prendas'
+import Prendas2 from '../Prendas/Prendas2'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
@@ -7,8 +8,9 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
-    //const [state, setstate] = useState(listaPrendas)
-    var prendas = [];
+    
+    const [prendas, setPrendas] = useState([]);
+
     var abonos = [];
     var total_arreglos = 0;
     function save(even) {
@@ -87,9 +89,10 @@ const RegistroFactura = ({ titulo }) => {
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
-                        <div className="col-md-8">
-                            <Prendas listaPrendas={prendas} />
+                        <div className="col-md-8"> 
+                            <Prendas estado = {prendas} setEstado ={setPrendas}/>
                             <Abonos listaAbonos={abonos}/>
+                            {/*<Prendas2 estado = {prendas} setEstado ={setPrendas}/>*/}
                         </div>
                     </div>
                 </div>
