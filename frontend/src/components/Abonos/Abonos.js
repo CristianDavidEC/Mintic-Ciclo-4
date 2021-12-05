@@ -37,12 +37,11 @@ const Abonos = (props) => {
             <div className="container mb-5">
                 <h4>Abonos:</h4>
                 <div className="row">
-                    <div className="col-md-5">
                         {props.estado.map((item, index) => (
-                            console.log(item, index),
+                            <div className="col-md-5">
                             <ItemAbonos abono={item.valor} fecha={item.fecha} key={index} />
+                            </div>
                         ))}
-                    </div>
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
                             <i className="fa fa-plus-circle display-6"></i>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
@@ -7,8 +7,9 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
-    
     const [prendas, setPrendas] = useState([]);
+    console.log(num)
+    console.log(num.ult_fact)
     const [abonos, setAbonos] = useState([]);
 
     /*useEffect(() => {
@@ -18,11 +19,10 @@ const RegistroFactura = ({ titulo }) => {
     var total_arreglos = 0;
     function save(even) {
         even.preventDefault();
-        
+
         const fecha = new Date();
         const fecIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
         //Calculando el total de arreglos
-
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -86,9 +86,9 @@ const RegistroFactura = ({ titulo }) => {
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
-                        <div className="col-md-8"> 
-                            <Prendas estado = {prendas} setEstado ={setPrendas}/>
-                            <Abonos estado = {abonos} setEstado ={setAbonos}/>
+                        <div className="col-md-8">
+                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>
                 </div>
