@@ -31,15 +31,15 @@ const DetalleFactura = ({ titulo }) => {
                             <label>Teléfono</label>
                             <Input placeholder="Teléfono" />
                             <label>Id</label>
-                            <Input placeholder="Teléfono" />
+                            <Input placeholder="Id" />
                             <label>Correo</label>
-                            <Input placeholder="Teléfono" />
+                            <Input placeholder="Correo" />
                             <label>Fecha Ingreso</label>
-                            <Input placeholder="Teléfono" />
+                            <Input placeholder="Fecha Ingreso" />
                             <label>Estado Factura</label>
-                            <Input placeholder="Teléfono" />
+                            <Input placeholder="Estado Factura" />
                             <label>Total a Pagar</label>
-                            <Input placeholder="Teléfono" />
+                            <Input placeholder="Total a Pagar" />
                             <button class="btn color-p color-l">Guardar</button>
                         </div>
                         <div className="col-md-8">
