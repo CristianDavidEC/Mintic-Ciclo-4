@@ -1,29 +1,33 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Prendas from '../Prendas/Prendas'
-import Prendas2 from '../Prendas/Prendas2'
+//import Prendas2 from '../Prendas/Prendas2'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
 import { addFacturaConID } from '../../apis/FacturasCRUD'
 
+
+
 const RegistroFactura = ({ titulo }) => {
-    var num = (Math.floor(Math.random() * 100001));
-    
+    //var num = (Math.floor(Math.random() * 100001));
+    var num = require("./ultima_factura.json");
     const [prendas, setPrendas] = useState([]);
+    console.log(num)
+    console.log(num.ult_fact)
 
     var abonos = [];
     var total_arreglos = 0;
     function save(even) {
         even.preventDefault();
-        
+
         const fecha = new Date();
         const fecIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
         //Calculando el total de arreglos
-        for(let i=0; i<prendas.length;i++) {
-            console.log("prendas: "+i +prendas[i])
-            total_arreglos = parseInt(prendas[i].costo)+total_arreglos;
+        for (let i = 0; i < prendas.length; i++) {
+            console.log("prendas: " + i + prendas[i])
+            total_arreglos = parseInt(prendas[i].costo) + total_arreglos;
         }
-        console.log("total is: "+total_arreglos);
+        console.log("total is: " + total_arreglos);
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -35,8 +39,14 @@ const RegistroFactura = ({ titulo }) => {
             totalPagar: total_arreglos.toString(),
             prendas: prendas,
             abonos: abonos,
-            id: num,
+            id: num.ult_fact,
         }
+        num.ult_fact += 1;
+        var dictstring = JSON.stringify(num);
+        num.writeFile("ultima_factura.json");
+        var fs = require('fs');
+        fs.writeFile("./ultima_factura.json", dictstring);
+
         addFacturaConID(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
@@ -89,9 +99,9 @@ const RegistroFactura = ({ titulo }) => {
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
-                        <div className="col-md-8"> 
-                            <Prendas estado = {prendas} setEstado ={setPrendas}/>
-                            <Abonos listaAbonos={abonos}/>
+                        <div className="col-md-8">
+                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Abonos listaAbonos={abonos} />
                             {/*<Prendas2 estado = {prendas} setEstado ={setPrendas}/>*/}
                         </div>
                     </div>
