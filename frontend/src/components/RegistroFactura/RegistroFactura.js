@@ -9,7 +9,6 @@ const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     
     const [prendas, setPrendas] = useState([]);
-
     const [abonos, setAbonos] = useState([]);
 
     var total_arreglos = 0;
