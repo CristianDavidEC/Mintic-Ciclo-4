@@ -9,11 +9,12 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 
 
 const RegistroFactura = ({ titulo }) => {
-    //var num = (Math.floor(Math.random() * 100001));
-    var num = require("./ultima_factura.json");
+    var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
     console.log(num)
     console.log(num.ult_fact)
+    const [abonos, setAbonos] = useState([]);
+
 
     var total_arreglos = 0;
     function save(even) {
@@ -38,22 +39,8 @@ const RegistroFactura = ({ titulo }) => {
             totalPagar: total_arreglos.toString(),
             prendas: prendas,
             abonos: abonos,
-            id: num.ult_fact,
+            id: num,
         }
-        num.ult_fact += 1;
-        var jsonObj = JSON.parse(num);
-        var dictstring = JSON.stringify(jsonObj);
-        //dictstring.writeFile("ultima_factura.json");
-        const fs = require('fs');
-        fs.writeFile("./ultima_factura.json", dictstring, 'utf8', function (err) {
-            if (err) {
-                console.log("An error occured while writing JSON Object to File.");
-                return console.log(err);
-            }
-         
-            console.log("JSON file has been saved.");
-        });
-
         addFacturaConID(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
