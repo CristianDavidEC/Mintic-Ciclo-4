@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
 import Prendas from '../Prendas/Prendas'
-<<<<<<< HEAD
-//import Prendas2 from '../Prendas/Prendas2'
-=======
->>>>>>> 5af1cd1b75975d3c12a552e6224b8008f7f15561
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
@@ -15,12 +11,9 @@ const RegistroFactura = ({ titulo }) => {
     //var num = (Math.floor(Math.random() * 100001));
     var num = require("./ultima_factura.json");
     const [prendas, setPrendas] = useState([]);
-<<<<<<< HEAD
     console.log(num)
     console.log(num.ult_fact)
-=======
     const [abonos, setAbonos] = useState([]);
->>>>>>> 5af1cd1b75975d3c12a552e6224b8008f7f15561
 
     var total_arreglos = 0;
     function save(even) {
@@ -105,16 +98,9 @@ const RegistroFactura = ({ titulo }) => {
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
-<<<<<<< HEAD
-                        <div className="col-md-8">
-                            <Prendas estado={prendas} setEstado={setPrendas} />
-                            <Abonos listaAbonos={abonos} />
-                            {/*<Prendas2 estado = {prendas} setEstado ={setPrendas}/>*/}
-=======
                         <div className="col-md-8"> 
                             <Prendas estado = {prendas} setEstado ={setPrendas}/>
                             <Abonos estado = {abonos} setEstado ={setAbonos}/>
->>>>>>> 5af1cd1b75975d3c12a552e6224b8008f7f15561
                         </div>
                     </div>
                 </div>

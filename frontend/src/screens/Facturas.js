@@ -9,9 +9,7 @@ const Facturas = () => {
     if (user_admin == undefined) {
         return <Navigate to="/" />;
     }
-    /*searchFacturasEstadoFact('pagado',res =>{
-        console.log(res);
-    });*/
+    
     return (
         <>
             <div className="container ancho">

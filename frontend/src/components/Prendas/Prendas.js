@@ -40,13 +40,11 @@ const Prendas = (props) => {
             <div className="container mb-5">
                 <h4>Prendas:</h4>
                 <div className="row">
-                    <div className="col-md-5">
                         {props.estado.map((item, index) => (
-                            console.log(item),
-                            /*<ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>*/
-                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
+                            <div className="col-md-5">
+                                <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
+                            </div>
                         ))}
-                    </div>
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
                             <i className="fa fa-plus-circle display-6"></i>
