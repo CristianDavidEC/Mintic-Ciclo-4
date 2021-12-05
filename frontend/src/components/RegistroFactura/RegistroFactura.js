@@ -5,11 +5,8 @@ import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
 import { addFacturaConID } from '../../apis/FacturasCRUD'
 
-
-
 const RegistroFactura = ({ titulo }) => {
-    //var num = (Math.floor(Math.random() * 100001));
-    var num = require("./ultima_factura.json");
+    var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
     console.log(num)
     console.log(num.ult_fact)
@@ -38,14 +35,8 @@ const RegistroFactura = ({ titulo }) => {
             totalPagar: total_arreglos.toString(),
             prendas: prendas,
             abonos: abonos,
-            id: num.ult_fact,
+            id: num,
         }
-        num.ult_fact += 1;
-        var dictstring = JSON.stringify(num);
-        num.writeFile("ultima_factura.json");
-        var fs = require('fs');
-        fs.writeFile("./ultima_factura.json", dictstring);
-
         addFacturaConID(obj, (res) => {
             console.log(res);
             if (res == "Factura Agregada") {
@@ -98,9 +89,9 @@ const RegistroFactura = ({ titulo }) => {
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
-                        <div className="col-md-8"> 
-                            <Prendas estado = {prendas} setEstado ={setPrendas}/>
-                            <Abonos estado = {abonos} setEstado ={setAbonos}/>
+                        <div className="col-md-8">
+                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>
                 </div>
