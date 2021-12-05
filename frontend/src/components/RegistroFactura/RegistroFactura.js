@@ -9,13 +9,19 @@ const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     //const [state, setstate] = useState(listaPrendas)
     var prendas = [];
-
+    var abonos = [];
+    var total_arreglos = 0;
     function save(even) {
         even.preventDefault();
         
         const fecha = new Date();
         const fecIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
-    
+        //Calculando el total de arreglos
+        for(let i=0; i<prendas.length;i++) {
+            console.log("prendas: "+i +prendas[i])
+            total_arreglos = parseInt(prendas[i].costo)+total_arreglos;
+        }
+        console.log("total is: "+total_arreglos);
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -23,8 +29,10 @@ const RegistroFactura = ({ titulo }) => {
             correo: even.target[3].value,
             fechaIngreso: fecIngreso.toString(),
             estadoFactura: even.target[4].value,
-            totalPagar: even.target[5].value,
+            //totalPagar: even.target[5].value,
+            totalPagar: total_arreglos.toString(),
             prendas: prendas,
+            abonos: abonos,
             id: num,
         }
         addFacturaConID(obj, (res) => {
@@ -81,7 +89,7 @@ const RegistroFactura = ({ titulo }) => {
                         </div>
                         <div className="col-md-8">
                             <Prendas listaPrendas={prendas} />
-                            <Abonos />
+                            <Abonos listaAbonos={abonos}/>
                         </div>
                     </div>
                 </div>

@@ -40,7 +40,8 @@ const Prendas = (props) => {
                     <div className="col-md-5">
                         {prendas.map((item, index) => (
                             console.log(item),
-                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>
+                            /*<ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>*/
+                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
                         ))}
                     </div>
                     <div className="col-md-1 mt-4">

@@ -5,6 +5,19 @@ import Input from '../Inputs/Input'
 import NavFacturas from '../NavFacturas'
 
 const DetalleFactura = ({ titulo }) => {
+
+    const prendas = {
+        color: 'test',
+        marca: '',
+        tipoPrenda: '',
+        tipoArreglo: '',
+        costo: 0,
+    }
+    const abonos = {
+        valor: even.target[0].value,
+        fecha: '2021-01-01 00:00:00'
+    }
+
     return (
         <>
             <div className="container ancho">
@@ -30,8 +43,8 @@ const DetalleFactura = ({ titulo }) => {
                             <button class="btn color-p color-l">Guardar</button>
                         </div>
                         <div className="col-md-8">
-                            <Prendas />
-                            <Abonos />
+                            <Prendas listaPrendas={prendas}/>
+                            <Abonos listaAbonos={abonos}/>
                         </div>
                     </div>
                 </div>
