@@ -9,7 +9,6 @@ const Tabla = () => {
 
     useEffect(() => {
         getFacturas(setResults);
-        console.log(results);
     }, []);
 
     return (

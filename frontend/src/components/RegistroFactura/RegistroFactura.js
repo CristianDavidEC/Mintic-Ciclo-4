@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
@@ -11,6 +11,10 @@ const RegistroFactura = ({ titulo }) => {
     const [prendas, setPrendas] = useState([]);
     const [abonos, setAbonos] = useState([]);
 
+    /*useEffect(() => {
+        console.log(prendas, 'registro');
+    },[]);*/
+
     var total_arreglos = 0;
     function save(even) {
         even.preventDefault();
@@ -18,11 +22,7 @@ const RegistroFactura = ({ titulo }) => {
         const fecha = new Date();
         const fecIngreso = fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
         //Calculando el total de arreglos
-        for(let i=0; i<prendas.length;i++) {
-            console.log("prendas: "+i +prendas[i])
-            total_arreglos = parseInt(prendas[i].costo)+total_arreglos;
-        }
-        console.log("total is: "+total_arreglos);
+
         const obj = {
             nombre: even.target[0].value,
             numDoc: even.target[1].value,
@@ -31,15 +31,13 @@ const RegistroFactura = ({ titulo }) => {
             fechaIngreso: fecIngreso.toString(),
             estadoFactura: even.target[4].value,
             //totalPagar: even.target[5].value,
-            totalPagar: total_arreglos.toString(),
+            totalPagar: even.target[5].value,
             prendas: prendas,
             abonos: abonos,
             id: num,
         }
         addFacturaConID(obj, (res) => {
-            console.log(res);
             if (res == "Factura Agregada") {
-                console.log(prendas);
                 alert("Factura registrada con exito");
                 window.location.href = "http://localhost:3000/facturas";
             } else {
@@ -83,7 +81,7 @@ const RegistroFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" />
+                                    <Form.Control type="text" placeholder="Total a Pagar" id="totalPago" disabled/>
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>

@@ -7,6 +7,14 @@ import RegistroFactura from '../RegistroFactura/RegistroFactura';
 
 const Prendas = (props) => {
 
+    useEffect(() => {
+        var suma = 0;
+        props.estado.forEach(valor => {
+            suma = suma + parseInt(valor.costo);
+        });
+        var total = document.querySelector("#totalPago").value= suma;
+    })
+
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
         const openModal = () => setIsOpen(true);
@@ -42,9 +50,9 @@ const Prendas = (props) => {
                 <div className="row">
                     <div className="col-md-5">
                         {props.estado.map((item, index) => (
-                            console.log(item),
+                            //console.log(item),
                             /*<ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>*/
-                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
+                            <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>
                         ))}
                     </div>
                     <div className="col-md-1 mt-4">
