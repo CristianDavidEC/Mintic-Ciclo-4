@@ -6,7 +6,13 @@ import Input from '../Inputs/Input'
 import RegistroFactura from '../RegistroFactura/RegistroFactura';
 
 const Prendas = (props) => {
-    var { listaPrendas } = props;
+
+    //const [prendas, setListaPrendas] = useState([]);
+
+
+    /*useEffect(() => {
+        setListaPrendas(prendas);
+    },[prendas]);*/
 
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
@@ -18,6 +24,7 @@ const Prendas = (props) => {
 
     function save(even) {
         even.preventDefault();
+        var lista = props.estado;
         const obj = {
             color: even.target[0].value,
             marca: even.target[1].value,
@@ -25,20 +32,24 @@ const Prendas = (props) => {
             tipoArreglo: even.target[3].value,
             costo: even.target[4].value,
         }
-        listaPrendas.push(obj);
-        setListaPrendas(listaPrendas);
+        lista.push(obj);
+        props.setEstado(lista);
+        closeModal();
         document.querySelector('#formPrenda').reset();
+        openModal();
+        
+        setTimeout(() => {
+            closeModal();
+        }, 100);
     }
 
-    const [prendas, setListaPrendas] = useState([listaPrendas]);
-    
     return (
         <>
             <div className="container mb-5">
                 <h4>Prendas:</h4>
                 <div className="row">
                     <div className="col-md-5">
-                        {prendas.map((item, index) => (
+                        {props.estado.map((item, index) => (
                             console.log(item),
                             /*<ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>*/
                             <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
