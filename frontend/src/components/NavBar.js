@@ -1,6 +1,10 @@
 import React from 'react'
 
 const NavBar = () => {
+    var user = JSON.parse(localStorage.getItem("user_admin"));
+    var isuser = (user != undefined);
+    
+  
     const CloseSession = () => {
         localStorage.removeItem('user_admin')
     }
@@ -26,10 +30,12 @@ const NavBar = () => {
                             <a href="/login" className="nav-link px-0 align-middle color-l">
                             <i className="fs-4 bi-person-circle"></i><span className="ms-1 d-none d-sm-inline"> <b>Perfil</b></span> </a>
                         </li>
+                        {isuser &&
                         <li>
                             <a href="/" className="nav-link px-0 align-middle color-l" onClick={CloseSession}>
                             <i className="fs-4 bi-x-circle"></i><span className="ms-1 d-none d-sm-inline"> <b>Salir</b></span> </a>
                         </li>
+                        }
                     </ul>
                 </div>
             </div>
