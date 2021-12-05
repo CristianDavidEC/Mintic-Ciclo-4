@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import Prendas from '../Prendas/Prendas'
-import Prendas2 from '../Prendas/Prendas2'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
 import { Form } from 'react-bootstrap'
@@ -11,7 +10,8 @@ const RegistroFactura = ({ titulo }) => {
     
     const [prendas, setPrendas] = useState([]);
 
-    var abonos = [];
+    const [abonos, setAbonos] = useState([]);
+
     var total_arreglos = 0;
     function save(even) {
         even.preventDefault();
@@ -91,8 +91,7 @@ const RegistroFactura = ({ titulo }) => {
                         </div>
                         <div className="col-md-8"> 
                             <Prendas estado = {prendas} setEstado ={setPrendas}/>
-                            <Abonos listaAbonos={abonos}/>
-                            {/*<Prendas2 estado = {prendas} setEstado ={setPrendas}/>*/}
+                            <Abonos estado = {abonos} setEstado ={setAbonos}/>
                         </div>
                     </div>
                 </div>

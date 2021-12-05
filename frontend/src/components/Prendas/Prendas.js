@@ -7,13 +7,6 @@ import RegistroFactura from '../RegistroFactura/RegistroFactura';
 
 const Prendas = (props) => {
 
-    //const [prendas, setListaPrendas] = useState([]);
-
-
-    /*useEffect(() => {
-        setListaPrendas(prendas);
-    },[prendas]);*/
-
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
         const openModal = () => setIsOpen(true);
@@ -32,12 +25,11 @@ const Prendas = (props) => {
             tipoArreglo: even.target[3].value,
             costo: even.target[4].value,
         }
+        
         lista.push(obj);
         props.setEstado(lista);
-        closeModal();
         document.querySelector('#formPrenda').reset();
         openModal();
-        
         setTimeout(() => {
             closeModal();
         }, 100);

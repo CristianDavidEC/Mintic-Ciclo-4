@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal'
 import Input from '../Inputs/Input'
 
 const Abonos = (props) => {
-    var { listaAbonos } = props;
+    
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
         const openModal = () => setIsOpen(true);
@@ -18,22 +18,27 @@ const Abonos = (props) => {
 
     function save(even) {
         even.preventDefault();
+        var lista = props.estado;
         const obj = {
             valor: even.target[0].value,
             fecha: fecAbono.toString()
         }
-        listaAbonos.push(obj);
-        setListaAbonos(listaAbonos);
+        lista.push(obj);
+        props.setEstado(lista);
         document.querySelector('#formAbono').reset();
+        openModal();
+        setTimeout(() => {
+            closeModal();
+        }, 100);
     }
-    const [abonos, setListaAbonos] = useState([listaAbonos]);
+
     return (
         <>
             <div className="container mb-5">
                 <h4>Abonos:</h4>
                 <div className="row">
                     <div className="col-md-5">
-                        {abonos.map((item, index) => (
+                        {props.estado.map((item, index) => (
                             console.log(item, index),
                             <ItemAbonos abono={item.valor} fecha={item.fecha} key={index} />
                         ))}
