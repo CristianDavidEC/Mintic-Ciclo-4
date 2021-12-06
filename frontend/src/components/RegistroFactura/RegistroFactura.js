@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
@@ -8,9 +8,9 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
-    
+
     const [abonos, setAbonos] = useState([]);
-    
+
     function save(even) {
         even.preventDefault();
 
@@ -32,7 +32,7 @@ const RegistroFactura = ({ titulo }) => {
         addFacturaConID(obj, (res) => {
             if (res === "Factura Agregada") {
                 alert("Factura registrada con exito");
-                window.location.href = "http://localhost:3000/facturas";
+                window.location.href = "https://sastreriamintic.web.app/facturas";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
             }
@@ -74,13 +74,13 @@ const RegistroFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" disabled/>
+                                    <Form.Control type="text" placeholder="Total a Pagar" disabled />
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas estado={prendas} setEstado={setPrendas}/>
+                            <Prendas estado={prendas} setEstado={setPrendas} />
                             <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>
