@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:5000";
+const url = "https://sastreria-bakend.herokuapp.com";
 
 export function searchFacturasEstadoFact(estadoFactura, callback) {
     axios.get(url + "/facturas/search/" + estadoFactura)
