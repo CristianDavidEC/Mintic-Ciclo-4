@@ -31,19 +31,19 @@ const DetalleFactura = ({ titulo }) => {
                             <Form>
                                 <Form.Group controlId="nombre">
                                     <Form.Label>Nombre</Form.Label>
-                                    <Form.Control type="text" placeholder="Nombre" value={results.nombre} />
+                                    <Form.Control type="text" placeholder="Nombre" defaultValue={results.nombre} />
                                 </Form.Group>
                                 <Form.Group controlId="numDoc">
                                     <Form.Label>Número Documento</Form.Label>
-                                    <Form.Control type="text" placeholder="Número Documento" value={results.numDoc} />
+                                    <Form.Control type="text" placeholder="Número Documento" defaultValue={results.numDoc} />
                                 </Form.Group>
                                 <Form.Group controlId="telefono">
                                     <Form.Label>Teléfono</Form.Label>
-                                    <Form.Control type="text" placeholder="Teléfono" value={results.telefono} />
+                                    <Form.Control type="text" placeholder="Teléfono" defaultValue={results.telefono} />
                                 </Form.Group>
                                 <Form.Group controlId="correo">
                                     <Form.Label>Correo</Form.Label>
-                                    <Form.Control type="text" placeholder="Correo" value={results.correo} />
+                                    <Form.Control type="text" placeholder="Correo" defaultValue={results.correo} />
                                 </Form.Group>
                                 <Form.Group className="" controlId="estadoFactura">
                                     <Form.Label>Estado Factura</Form.Label>
@@ -56,7 +56,7 @@ const DetalleFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.totalPagar} disabled/>
+                                    <Form.Control type="text" placeholder="Total a Pagar" id="totalPagar" value={results.totalPagar} readOnly />
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>

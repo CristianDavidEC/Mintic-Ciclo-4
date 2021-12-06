@@ -8,6 +8,7 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
+    
     const [abonos, setAbonos] = useState([]);
     
     function save(even) {
@@ -73,7 +74,7 @@ const RegistroFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" id="totalPago" disabled/>
+                                    <Form.Control type="text" placeholder="Total a Pagar" disabled/>
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>

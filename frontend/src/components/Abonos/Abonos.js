@@ -38,8 +38,8 @@ const Abonos = (props) => {
                 <h4>Abonos:</h4>
                 <div className="row">
                     {props.estado.map((item, index) => (
-                        <div className="col-md-5" key={index}>
-                            <ItemAbonos abono={item.valor} fecha={item.fecha} key={index} />
+                        <div className="col-md-5">
+                            <ItemAbonos estado={props.estado} setEstado={props.setEstado}  abono={item.valor} fecha={item.fecha} key={index} />
                         </div>
                     ))}
                     <div className="col-md-1 mt-4">
