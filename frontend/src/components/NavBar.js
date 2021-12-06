@@ -2,9 +2,8 @@ import React from 'react'
 
 const NavBar = () => {
     var user = JSON.parse(localStorage.getItem("user_admin"));
-    var isuser = (user !== undefined);
-    
-  
+    var isuser = (user !== null);
+
     const CloseSession = () => {
         localStorage.removeItem('user_admin')
     }

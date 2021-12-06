@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
 
 const Facturas = () => {
     var user_admin = JSON.parse(localStorage.getItem("user_admin"));
-    if (user_admin === undefined) {
+    if (user_admin === null) {
         return <Navigate to="/" />;
     }
     

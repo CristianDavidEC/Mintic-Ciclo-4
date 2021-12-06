@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import NavFacturas from '../NavFacturas'
@@ -8,7 +8,6 @@ import { addFacturaConID } from '../../apis/FacturasCRUD'
 const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
-    console.log(num)
     const [abonos, setAbonos] = useState([]);
     
     function save(even) {
@@ -80,7 +79,7 @@ const RegistroFactura = ({ titulo }) => {
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Prendas estado={prendas} setEstado={setPrendas}/>
                             <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>

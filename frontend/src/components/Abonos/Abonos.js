@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal'
 import Input from '../Inputs/Input'
 
 const Abonos = (props) => {
-    
+
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
         const openModal = () => setIsOpen(true);
@@ -37,11 +37,11 @@ const Abonos = (props) => {
             <div className="container mb-5">
                 <h4>Abonos:</h4>
                 <div className="row">
-                        {props.estado.map((item, index) => (
-                            <div className="col-md-5">
+                    {props.estado.map((item, index) => (
+                        <div className="col-md-5" key={index}>
                             <ItemAbonos abono={item.valor} fecha={item.fecha} key={index} />
-                            </div>
-                        ))}
+                        </div>
+                    ))}
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
                             <i className="fa fa-plus-circle display-6"></i>

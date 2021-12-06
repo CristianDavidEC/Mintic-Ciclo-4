@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react'
 import ItemPrenda from './ItemPrenda/ItemPrenda'
 import Modal from '../Modal/Modal'
 import Input from '../Inputs/Input'
+import { useParams } from "react-router";
 
 const Prendas = (props) => {
-
+    const idFactura = useParams().id;
+    console.log(idFactura);
+    
+    var suma = 0;
     useEffect(() => {
-        var suma = 0;
         props.estado.forEach(valor => {
             suma = suma + parseInt(valor.costo);
-        });
-        //var total = document.querySelector("#totalPago").value= suma;
-    })
+            if (idFactura === undefined) {
+                document.querySelector("#totalPago").value = suma;
+            }
+        });        
+    });
 
     const useModal = (initialValue = false) => {
         const [isOpen, setIsOpen] = useState(initialValue);
@@ -47,9 +52,9 @@ const Prendas = (props) => {
                 <h4>Prendas:</h4>
                 <div className="row">
                         {props.estado.map((item, index) => (
-                            <div className="col-md-5">
-                                <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>
-                            </div>
+                            <div className="col-md-5" key={index}>
+                                <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo}/>
+                            </div>  
                         ))}
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
@@ -69,7 +74,7 @@ const Prendas = (props) => {
                     <label>Tipo Arreglo:</label>
                     <Input placeholder="Tipo Arreglo" name="tipoArreglo" />
                     <label>Costo:</label>
-                    <Input placeholder="Costo" name="costo" />
+                    <Input placeholder="Costo" name="costo"/>
                     <button type="submit" className="btn color-p color-l mt-3" onClick={closeModal}>Agregar</button>
                 </form>
             </Modal>

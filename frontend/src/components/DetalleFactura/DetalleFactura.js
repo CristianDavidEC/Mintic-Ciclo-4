@@ -16,11 +16,10 @@ const DetalleFactura = ({ titulo }) => {
     useEffect(() => {
         getOneFactura(idFactura, res => {
             setResults(res);
+            setPrendas(res.prendas);
+            setAbonos(res.abonos);
         });
     }, []);
-
-    console.log(results);
-
     return (
         <>
             <div className="container ancho">
@@ -57,7 +56,7 @@ const DetalleFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.totalPagar} readOnly />
+                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.totalPagar} disabled/>
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
