@@ -15,13 +15,11 @@ const DetalleFactura = ({ titulo }) => {
 
     useEffect(() => {
         getOneFactura(idFactura, res => {
-            //console.log(res);
             setResults(res);
         });
     }, []);
 
-    var datos = results[0];
-    console.log(results[0].nombre);
+    console.log(results);
 
     return (
         <>
@@ -34,11 +32,11 @@ const DetalleFactura = ({ titulo }) => {
                             <Form>
                                 <Form.Group controlId="nombre">
                                     <Form.Label>Nombre</Form.Label>
-                                    <Form.Control type="text" placeholder="Nombre" value={'hola'} />
+                                    <Form.Control type="text" placeholder="Nombre" value={results.nombre} />
                                 </Form.Group>
                                 <Form.Group controlId="numDoc">
                                     <Form.Label>Número Documento</Form.Label>
-                                    <Form.Control type="text" placeholder="Número Documento" value={results.doc} />
+                                    <Form.Control type="text" placeholder="Número Documento" value={results.numDoc} />
                                 </Form.Group>
                                 <Form.Group controlId="telefono">
                                     <Form.Label>Teléfono</Form.Label>
@@ -59,13 +57,13 @@ const DetalleFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.total} />
+                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.totalPagar} readOnly />
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Prendas estado={prendas} setEstado={setPrendas}  />
                             <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>

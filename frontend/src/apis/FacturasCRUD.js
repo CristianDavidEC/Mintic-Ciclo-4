@@ -36,8 +36,7 @@ export function addFacturaConID(factura, callback) {
 export function getOneFactura(idFactura, callback) {
     axios.get(url + "/facturas/" + idFactura)
         .then((res) => {
-            var lista = [res.data];
-            callback(lista);
+            callback(res.data);
         })
         .catch((err) => {
             callback(err);
