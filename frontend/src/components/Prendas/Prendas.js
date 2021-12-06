@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 
 const Prendas = (props) => {
     const idFactura = useParams().id;
-    
     var suma = 0;
     useEffect(() => {
         props.estado.forEach(valor => {
