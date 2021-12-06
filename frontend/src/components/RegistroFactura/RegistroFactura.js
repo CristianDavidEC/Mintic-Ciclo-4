@@ -9,14 +9,8 @@ const RegistroFactura = ({ titulo }) => {
     var num = (Math.floor(Math.random() * 100001));
     const [prendas, setPrendas] = useState([]);
     console.log(num)
-    console.log(num.ult_fact)
     const [abonos, setAbonos] = useState([]);
-
-    /*useEffect(() => {
-        console.log(prendas, 'registro');
-    },[]);*/
-
-    var total_arreglos = 0;
+    
     function save(even) {
         even.preventDefault();
 
@@ -30,14 +24,13 @@ const RegistroFactura = ({ titulo }) => {
             correo: even.target[3].value,
             fechaIngreso: fecIngreso.toString(),
             estadoFactura: even.target[4].value,
-            //totalPagar: even.target[5].value,
             totalPagar: even.target[5].value,
             prendas: prendas,
             abonos: abonos,
             id: num,
         }
         addFacturaConID(obj, (res) => {
-            if (res == "Factura Agregada") {
+            if (res === "Factura Agregada") {
                 alert("Factura registrada con exito");
                 window.location.href = "http://localhost:3000/facturas";
             } else {

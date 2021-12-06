@@ -3,8 +3,6 @@ import ItemPrenda from './ItemPrenda/ItemPrenda'
 import Modal from '../Modal/Modal'
 import Input from '../Inputs/Input'
 
-import RegistroFactura from '../RegistroFactura/RegistroFactura';
-
 const Prendas = (props) => {
 
     useEffect(() => {
@@ -12,7 +10,7 @@ const Prendas = (props) => {
         props.estado.forEach(valor => {
             suma = suma + parseInt(valor.costo);
         });
-        var total = document.querySelector("#totalPago").value= suma;
+        //var total = document.querySelector("#totalPago").value= suma;
     })
 
     const useModal = (initialValue = false) => {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import Tr from './Tr'
-import { getFacturas } from "../../apis/FacturasCRUD";
+import { getFacturas } from "../../apis/FacturasCRUD"
 
 
 const Tabla = () => {

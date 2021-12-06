@@ -21,24 +21,23 @@ export function getFacturas(callback) {
         })
 }
 
-//Agregar una nueva factura
-/*
-export function addFactura(factura, callback){
-    axios.post(url+"/facturas/", factura)
-    .then((res)=>{
-        callback(res.data);
-    })
-    .catch((err)=>{
-        callback(err);
-    })
-}
-*/
-
 //Agregar una nueva factura con Id
 export function addFacturaConID(factura, callback) {
     axios.post(url + "/facturas/" + factura.id, factura)
         .then((res) => {
             callback(res.data);
+        })
+        .catch((err) => {
+            callback(err);
+        })
+}
+
+//Traer detalles factura con Id
+export function getOneFactura(idFactura, callback) {
+    axios.get(url + "/facturas/" + idFactura)
+        .then((res) => {
+            var lista = [res.data];
+            callback(lista);
         })
         .catch((err) => {
             callback(err);

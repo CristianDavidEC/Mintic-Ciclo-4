@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/facturas" element={<Facturas />} />
-            <Route path="/detalleFactura" element={<DetalleFactura titulo="Detalle Factura" />} />
+            <Route path="/detalleFactura/:id" element={<DetalleFactura titulo="Detalle Factura" />} />
             <Route path="/registrarFactura" element={<RegistroFactura titulo="Registrar Factura" />} />
             <Route path="/todasFacturas" element={<Tabla />} />
             <Route path="/login" element={<Login />} />

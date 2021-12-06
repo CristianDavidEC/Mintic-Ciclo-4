@@ -9,7 +9,7 @@ const Tr = (props) => {
                 <td>{objeto.nombre}</td>
                 <td>{objeto.estadoFactura}</td>
                 <td>{objeto.fechaIngreso}</td>
-                <td><a href="/detalleFactura" className="enlaces"><button className="btn color-s color-l"><i className="fa fa-eye"></i></button></a></td>
+                <td><a href={"/detalleFactura/" + objeto.id} className="enlaces"><button className="btn color-s color-l"><i className="fa fa-eye"></i></button></a></td>
             </tr>
         </>
     )

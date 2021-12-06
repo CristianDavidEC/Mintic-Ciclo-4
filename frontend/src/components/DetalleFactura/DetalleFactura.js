@@ -1,27 +1,27 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect } from 'react'
 import Prendas from '../Prendas/Prendas'
 import Abonos from '../Abonos/Abonos'
 import { Form } from 'react-bootstrap'
 import NavFacturas from '../NavFacturas'
-import { getFacturas } from "../../apis/FacturasCRUD"
+import { getOneFactura } from "../../apis/FacturasCRUD"
+import { useParams } from "react-router";
 
 const DetalleFactura = ({ titulo }) => {
     const [results, setResults] = useState([]);
     const [prendas, setPrendas] = useState([]);
     const [abonos, setAbonos] = useState([]);
 
+    const idFactura = useParams().id;
+
     useEffect(() => {
-        getFacturas(setResults);
-        console.log(results);
+        getOneFactura(idFactura, res => {
+            //console.log(res);
+            setResults(res);
+        });
     }, []);
 
-    const factura = {
-        nombre: 'test',
-        doc: 12345,
-        telefono: 15325,
-        correo: 'asd@gmail.com',
-        total: 15000,
-    }
+    var datos = results[0];
+    console.log(results[0].nombre);
 
     return (
         <>
@@ -31,22 +31,22 @@ const DetalleFactura = ({ titulo }) => {
                     <h4>{titulo}</h4>
                     <div className="row">
                         <div className="col-md-4 border-end">
-                        <Form>
+                            <Form>
                                 <Form.Group controlId="nombre">
                                     <Form.Label>Nombre</Form.Label>
-                                    <Form.Control type="text" placeholder="Nombre" value={factura.nombre} />
+                                    <Form.Control type="text" placeholder="Nombre" value={'hola'} />
                                 </Form.Group>
                                 <Form.Group controlId="numDoc">
                                     <Form.Label>Número Documento</Form.Label>
-                                    <Form.Control type="text" placeholder="Número Documento" value={factura.doc} />
+                                    <Form.Control type="text" placeholder="Número Documento" value={results.doc} />
                                 </Form.Group>
                                 <Form.Group controlId="telefono">
                                     <Form.Label>Teléfono</Form.Label>
-                                    <Form.Control type="text" placeholder="Teléfono" value={factura.telefono} />
+                                    <Form.Control type="text" placeholder="Teléfono" value={results.telefono} />
                                 </Form.Group>
                                 <Form.Group controlId="correo">
                                     <Form.Label>Correo</Form.Label>
-                                    <Form.Control type="text" placeholder="Correo" value={factura.correo} />
+                                    <Form.Control type="text" placeholder="Correo" value={results.correo} />
                                 </Form.Group>
                                 <Form.Group className="" controlId="estadoFactura">
                                     <Form.Label>Estado Factura</Form.Label>
@@ -59,14 +59,14 @@ const DetalleFactura = ({ titulo }) => {
                                 </Form.Group>
                                 <Form.Group className="mb-2" controlId="totalPagar">
                                     <Form.Label>Total a Pagar</Form.Label>
-                                    <Form.Control type="text" placeholder="Total a Pagar" value={factura.total} />
+                                    <Form.Control type="text" placeholder="Total a Pagar" value={results.total} />
                                 </Form.Group>
                                 <button type="submit" className="btn color-p color-l">Guardar</button>
                             </Form>
                         </div>
                         <div className="col-md-8">
-                            <Prendas estado = {prendas} setEstado ={setPrendas}/>
-                            <Abonos estado = {abonos} setEstado ={setAbonos}/>
+                            <Prendas estado={prendas} setEstado={setPrendas} />
+                            <Abonos estado={abonos} setEstado={setAbonos} />
                         </div>
                     </div>
                 </div>
