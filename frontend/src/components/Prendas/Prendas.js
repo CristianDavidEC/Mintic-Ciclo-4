@@ -10,7 +10,7 @@ const Prendas = (props) => {
         props.estado.forEach(valor => {
             suma = suma + parseInt(valor.costo);
         });
-        //var total = document.querySelector("#totalPago").value= suma;
+        var total = document.querySelector("#totalPagar").value= suma;
     })
 
     const useModal = (initialValue = false) => {
@@ -31,7 +31,7 @@ const Prendas = (props) => {
             tipoArreglo: even.target[3].value,
             costo: even.target[4].value,
         }
-        
+
         lista.push(obj);
         props.setEstado(lista);
         document.querySelector('#formPrenda').reset();
@@ -46,11 +46,11 @@ const Prendas = (props) => {
             <div className="container mb-5">
                 <h4>Prendas:</h4>
                 <div className="row">
-                        {props.estado.map((item, index) => (
-                            <div className="col-md-5">
-                                <ItemPrenda color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index}/>
-                            </div>
-                        ))}
+                    {props.estado.map((item, index) => (
+                        <div className="col-md-5">
+                            <ItemPrenda estado={props.estado} setEstado={props.setEstado} color={item.color} marca={item.marca} tipo={item.tipoPrenda} tipoArreglo={item.tipoArreglo} costo={item.costo} key={index} />
+                        </div>
+                    ))}
                     <div className="col-md-1 mt-4">
                         <button className="btn" onClick={openModal}>
                             <i className="fa fa-plus-circle display-6"></i>
